@@ -18,13 +18,13 @@ public void draw()
   ryan.show();
 }
 public void keyPressed(){
-  if(key == 'a')
+  if(key == 'a' || key == 'A')
   ryan.turn(10);
-  if(key == 'd')
+  if(key == 'd' || key == 'D')
   ryan.turn(-10);
-  if(key == 'w')
+  if(key == 'w' || key == 'W')
   ryan.accelerate(1);
-  if(key == 'd')
+  if(key == 'd' || key == 'D')
   ryan.accelerate(-1);
   if(key == 'h' || key == 'H'){
   ryan.setXspeed(0);
