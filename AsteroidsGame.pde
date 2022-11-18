@@ -24,7 +24,7 @@ public void keyPressed(){
   ryan.turn(-10);
   if(key == 'w' || key == 'W')
   ryan.accelerate(1);
-  if(key == 'd' || key == 'D')
+  if(key == 's' || key == 'S')
   ryan.accelerate(-1);
   if(key == 'h' || key == 'H'){
   ryan.setXspeed(0);
