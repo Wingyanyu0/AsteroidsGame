@@ -29,6 +29,7 @@ public void keyPressed(){
   if(key == 'h' || key == 'H'){
   ryan.setXspeed(0);
   ryan.setYspeed(0);
+  ryan.hyperspace();
 }
 }
 
