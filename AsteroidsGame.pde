@@ -1,10 +1,15 @@
 Spaceship ryan = new Spaceship(); 
 Star[] nightSky = new Star[200];
+ArrayList <Asteroid> rock = new ArrayList<Asteroid>();
 public void setup() 
 {
   size(500,500);
   for(int i = 0; i <  nightSky.length; i++){
     nightSky[i] = new Star(); 
+  }
+    for(int a = 0; a < 20; a++){
+       rock.add(new Asteroid());
+       rock.get(a).accelerate((int)(Math.random()*15)+1);
   }
 }
 public void draw() 
@@ -16,7 +21,15 @@ public void draw()
   }
   ryan.move();
   ryan.show();
-}
+  for(int a = 0; a < rock.size(); a++){
+    rock.get(a).show();
+    rock.get(a).move();
+  //for(int i = 0; i < rock.size(); i++){
+   float d = dist(ryan.getX(), ryan.getY(), rock.get(a).getX(), rock.get(a).getY());
+   if(d < 10)
+   rock.remove(a);
+   }
+  }
 public void keyPressed(){
   if(key == 'a' || key == 'A')
   ryan.turn(10);
