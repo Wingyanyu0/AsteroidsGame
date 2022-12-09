@@ -34,9 +34,21 @@ public void setX(int x){
    }
  public void setXspeed(double x){
   myXspeed = x;
+ }
+  public int getXspeed(){
+     return (int)myXspeed;
 }
  public void setYspeed(double y){
   myYspeed = y;
+ }
+    public int getYspeed(){
+     return (int)myYspeed;
+}
+public void setPointDirection(int q){
+  myPointDirection = q;
+}
+public int getPointDirection(){
+  return (int)myPointDirection;
 }
  public void hyperspace(){
    myCenterX = (int)(Math.random()*500);
