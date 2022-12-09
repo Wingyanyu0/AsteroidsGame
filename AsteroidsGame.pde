@@ -59,15 +59,4 @@ public void keyPressed(){
   ryan.hyperspace();
 }
 }
-  ryan.turn(-10);
-  if(key == 'w' || key == 'W')
-  ryan.accelerate(1);
-  if(key == 's' || key == 'S')
-  ryan.accelerate(-1);
-  if(key == 'h' || key == 'H'){
-  ryan.setXspeed(0);
-  ryan.setYspeed(0);
-  ryan.hyperspace();
-}
-}
 
