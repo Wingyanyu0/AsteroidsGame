@@ -6,7 +6,7 @@ class Bullet extends Floater{
      myXspeed = ryan.getXspeed();
      myYspeed = ryan.getYspeed();
      myPointDirection = ryan.getPointDirection();
-     accelerate(.6);
+     accelerate(6);
   }
   public void show(){
     fill(255);
