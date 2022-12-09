@@ -29,14 +29,16 @@ public void draw()
    if(d < 10)
    rock.remove(a);
    }
-   for(int a = 0; a < rock.size(); a++){
-   for(int p = 0; p < shots.size(); p++){
-     shots.get(p).move();
-     shots.get(p).show();
-     float s = dist(shots.get(p).getX(), shots.get(p).getY(), rock.get(a).getX(), rock.get(a).getY());
+   for(int a = 0; a < shots.size(); a++){
+     shots.get(a).move();
+     shots.get(a).show();
+   }
+   for(int a = 0; a < shots.size(); a++){
+   for(int p = 0; p < rock.size(); p++){
+     float s = dist(shots.get(a).getX(), shots.get(a).getY(), rock.get(p).getX(), rock.get(p).getY());
      if(s < 20){
-       rock.remove(a);
-       shots.remove(p);
+       rock.remove(p);
+       shots.remove(a);
        break;
      }
    }
