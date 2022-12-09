@@ -1,6 +1,7 @@
 Spaceship ryan = new Spaceship(); 
 Star[] nightSky = new Star[200];
 ArrayList <Asteroid> rock = new ArrayList<Asteroid>();
+ArrayList <Bullet> shots = new ArrayList<Bullet>();
 public void setup() 
 {
   size(500,500);
@@ -24,16 +25,40 @@ public void draw()
   for(int a = 0; a < rock.size(); a++){
     rock.get(a).show();
     rock.get(a).move();
-  //for(int i = 0; i < rock.size(); i++){
    float d = dist(ryan.getX(), ryan.getY(), rock.get(a).getX(), rock.get(a).getY());
    if(d < 10)
    rock.remove(a);
+   }
+   for(int a = 0; a < rock.size(); a++){
+   for(int p = 0; p < shots.size(); p++){
+     shots.get(p).move();
+     shots.get(p).show();
+     float s = dist(shots.get(p).getX(), shots.get(p).getY(), rock.get(a).getX(), rock.get(a).getY());
+     if(s < 20){
+       rock.remove(a);
+       shots.remove(p);
+       break;
+     }
+   }
    }
   }
 public void keyPressed(){
   if(key == 'a' || key == 'A')
   ryan.turn(10);
   if(key == 'd' || key == 'D')
+  ryan.turn(-10);
+  if(key == 'w' || key == 'W')
+  ryan.accelerate(1);
+  if(key == 's' || key == 'S')
+  ryan.accelerate(-1);
+  if(key == ' ')
+  shots.add(new Bullet(ryan));
+  if(key == 'h' || key == 'H'){
+  ryan.setXspeed(0);
+  ryan.setYspeed(0);
+  ryan.hyperspace();
+}
+}
   ryan.turn(-10);
   if(key == 'w' || key == 'W')
   ryan.accelerate(1);
